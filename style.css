@@ -1,0 +1,60 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+:root {
+    --desired-color: tomato;
+}
+
+@keyframes ripple {
+
+    0% {
+        box-shadow: 0 0 0 0 var(--desired-color),
+            0 0 0 0 var(--desired-color),
+            0 0 0 0 var(--desired-color);
+
+    }
+
+    100% {
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0),
+            0 0 0 40px rgba(0, 0, 0, 0),
+            0 0 0 60px rgba(0, 0, 0, 0);
+    }
+}
+
+
+
+
+.btn-waves {
+    width: 100px;
+    height: 100px;
+    background: #215ff6;
+    border: none;
+    border-radius: 50%;
+    font-size: 50px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+
+    transition: all 0.4s ease;
+    transform: translateY(-20px);
+    animation: ripple 2s infinite;
+
+}
+
+.btn-waves:hover {
+    transform: translateY(0px);
+
+}
